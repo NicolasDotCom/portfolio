@@ -1,0 +1,40 @@
+---
+import { getTranslations, getLocaleFromUrl } from '../i18n';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = getTranslations(locale);
+
+const stack = ['React', 'Astro', 'TypeScript', 'Tailwind', 'Node.js'];
+---
+
+<section id="about" class="section">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 flex items-center gap-4">
+        <span class="w-8 h-px bg-[var(--accent)]"></span>
+        {t.about.title}
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 md:gap-20">
+      <div class="reveal">
+        <p class="text-[var(--muted)] text-lg leading-relaxed mb-8">
+          {t.about.text}
+        </p>
+      </div>
+
+      <div class="reveal">
+        <h3 class="mono text-sm text-[var(--muted)] uppercase tracking-wider mb-6">
+          {t.about.stack}
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          {stack.map((tech) => (
+            <span class="px-4 py-2 border border-[var(--border)] rounded-full text-sm text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--fg)] transition-colors">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+---
+import { getLocaleFromUrl, getRelativeUrl } from '../i18n';
+
+const locale = getLocaleFromUrl(Astro.url);
+const esUrl = getRelativeUrl(Astro.url, 'es');
+const enUrl = getRelativeUrl(Astro.url, 'en');
+---
+
+<div class="flex items-center gap-1 text-sm">
+  <a
+    href={esUrl}
+    class:list={[
+      'px-2 py-1 rounded transition-colors',
+      locale === 'es'
+        ? 'text-[var(--accent)] font-medium'
+        : 'text-[var(--muted)] hover:text-[var(--fg)]'
+    ]}
+  >
+    ES
+  </a>
+  <span class="text-[var(--border)]">|</span>
+  <a
+    href={enUrl}
+    class:list={[
+      'px-2 py-1 rounded transition-colors',
+      locale === 'en'
+        ? 'text-[var(--accent)] font-medium'
+        : 'text-[var(--muted)] hover:text-[var(--fg)]'
+    ]}
+  >
+    EN
+  </a>
+</div>

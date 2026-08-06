@@ -1,0 +1,41 @@
+---
+import { getTranslations, getLocaleFromUrl, getRelativeUrl } from '../i18n';
+import { NAV_ITEMS } from '../consts';
+import ThemeToggle from './ThemeToggle.astro';
+import LangSwitcher from './LangSwitcher.astro';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = getTranslations(locale);
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-[var(--bg)]/80 backdrop-blur-md border-b border-[var(--border)]">
+  <div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a
+      href="#home"
+      class="text-lg font-bold tracking-tight hover:text-[var(--accent)] transition-colors"
+      aria-label="Home"
+    >
+      N.
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-8">
+      {NAV_ITEMS.map((item) => (
+        <a
+          href={item.href}
+          class="text-sm text-[var(--muted)] hover:text-[var(--fg)] transition-colors relative group"
+        >
+          {t.nav[item.key]}
+          <span class="absolute -bottom-1 left-0 w-0 h-px bg-[var(--accent)] transition-all group-hover:w-full"></span>
+        </a>
+      ))}
+    </nav>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-4">
+      <LangSwitcher />
+      <ThemeToggle />
+    </div>
+  </div>
+</header>

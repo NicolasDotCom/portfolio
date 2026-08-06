@@ -1,0 +1,49 @@
+---
+import { getTranslations, getLocaleFromUrl } from '../i18n';
+
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  image: string;
+  link?: string;
+  code?: string;
+}
+
+const { title, description, tags, image, link, code } = Astro.props;
+const locale = getLocaleFromUrl(Astro.url);
+const t = getTranslations(locale);
+---
+
+<article class="project-card group">
+  <div class="project-card-image">
+    <img src={image} alt={title} loading="lazy" class="aspect-video object-cover" />
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2 group-hover:text-[var(--accent)] transition-colors">
+      {title}
+    </h3>
+    <p class="text-[var(--muted)] text-sm mb-4">
+      {description}
+    </p>
+    <div class="flex flex-wrap gap-2 mb-4">
+      {tags.map((tag) => (
+        <span class="mono text-xs px-2 py-1 bg-[var(--bg-subtle)] rounded text-[var(--muted)]">
+          {tag}
+        </span>
+      ))}
+    </div>
+    <div class="flex gap-4">
+      {link && (
+        <a href={link} class="text-sm text-[var(--accent)] hover:underline" target="_blank" rel="noopener">
+          {t.projects.viewProject}
+        </a>
+      )}
+      {code && (
+        <a href={code} class="text-sm text-[var(--muted)] hover:text-[var(--fg)] hover:underline" target="_blank" rel="noopener">
+          {t.projects.viewCode}
+        </a>
+      )}
+    </div>
+  </div>
+</article>

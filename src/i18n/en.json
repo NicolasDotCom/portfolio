@@ -1,0 +1,45 @@
+{
+  "site": {
+    "title": "Nicolás — Fullstack Developer",
+    "description": "Fullstack Developer crafting unique web experiences."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "[Your Name]",
+    "title": "Fullstack Developer",
+    "description": "Crafting unique web experiences with clean code and minimalist design.",
+    "cta": "View projects",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "title": "About me",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Passionate about creating minimalist interfaces with clean code. I enjoy turning ideas into digital products people love to use.",
+    "stack": "Tech stack"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View project",
+    "viewCode": "View code"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a project in mind? I'd love to hear your idea.",
+    "email": "hello@nicolasdotcom.dev",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send message"
+    }
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "rights": "All rights reserved."
+  }
+}
