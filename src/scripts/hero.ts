@@ -11,7 +11,7 @@ export function initHero(): void {
   timeline?.kill();
   split?.revert();
 
-  split = new SplitType(nameEl, { types: 'chars' });
+  split = new SplitType(nameEl, { types: 'words, chars' });
 
   const chars: Element[] =
     split.chars && split.chars.length > 0 ? Array.from(split.chars) : [nameEl];

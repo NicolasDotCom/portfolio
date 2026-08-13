@@ -226,6 +226,19 @@ h3 {
 }
 
 /* ============================================
+   SPLITTYPE — evita cortes a mitad de palabra
+   ============================================ */
+
+.split-type .word {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.split-type .char {
+  display: inline-block;
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
 
