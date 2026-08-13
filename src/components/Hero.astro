@@ -46,58 +46,7 @@ const t = getTranslations(locale);
 </section>
 
 <script>
-  import gsap from 'gsap';
-  import SplitType from 'split-type';
+  import { initHero } from '../scripts/hero';
 
-  document.addEventListener('astro:page-load', () => {
-    // Split name into chars
-    const nameEl = document.querySelector('.hero-name');
-    if (!nameEl) return;
-
-    const split = new SplitType('.hero-name', { types: 'chars' });
-
-    const tl = gsap.timeline({ delay: 0.3 });
-
-    tl.to('.hero-greeting', {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power3.out',
-    })
-    .fromTo(
-      split.chars,
-      { opacity: 0, y: 50, rotateX: -90 },
-      {
-        opacity: 1,
-        y: 0,
-        rotateX: 0,
-        duration: 0.8,
-        stagger: 0.03,
-        ease: 'power4.out',
-      },
-      '-=0.4'
-    )
-    .to('.hero-title', {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power3.out',
-    }, '-=0.3')
-    .to('.hero-description', {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power3.out',
-    }, '-=0.5')
-    .to('.hero-cta', {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power3.out',
-    }, '-=0.5')
-    .to('.hero-scroll', {
-      opacity: 1,
-      duration: 0.5,
-    }, '-=0.2');
-  });
+  document.addEventListener('astro:page-load', initHero);
 </script>

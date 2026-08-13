@@ -1,0 +1,50 @@
+---
+import { getTranslations, getLocaleFromUrl } from '../i18n';
+
+const locale = getLocaleFromUrl(Astro.url);
+const t = getTranslations(locale);
+---
+
+<section id="experience" class="section">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="reveal">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-4">
+        <span class="w-8 h-px bg-[var(--accent)]"></span>
+        {t.experience.title}
+      </h2>
+    </div>
+
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-[var(--border)] md:-translate-x-1/2"></div>
+
+      <div class="space-y-12">
+        {t.experience.items.map((item, index) => (
+          <div
+            class:list={[
+              'reveal relative grid md:grid-cols-2 gap-8 pl-8 md:pl-0',
+              index % 2 === 0 ? 'md:text-right' : 'md:[&>:first-child]:order-2 md:[&>:last-child]:order-1',
+            ]}
+          >
+            <!-- Dot -->
+            <div class="absolute left-0 md:left-1/2 top-2 w-3 h-3 rounded-full bg-[var(--accent)] ring-4 ring-[var(--bg)] -translate-x-[5px] md:-translate-x-1/2"></div>
+
+            <!-- Period -->
+            <div class:list={['mono text-sm text-[var(--accent)]', index % 2 === 0 ? 'md:text-right' : 'md:text-left']}>
+              {item.period}
+            </div>
+
+            <!-- Content -->
+            <div class={index % 2 === 0 ? 'md:text-left' : 'md:text-right'}>
+              <h3 class="text-xl font-semibold mb-1">{item.role}</h3>
+              <p class="text-[var(--muted)] mb-3 font-medium">{item.company}</p>
+              <p class="text-[var(--muted)] text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

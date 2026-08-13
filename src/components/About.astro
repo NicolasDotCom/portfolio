@@ -4,7 +4,28 @@ import { getTranslations, getLocaleFromUrl } from '../i18n';
 const locale = getLocaleFromUrl(Astro.url);
 const t = getTranslations(locale);
 
-const stack = ['React', 'Astro', 'TypeScript', 'Tailwind', 'Node.js'];
+const skillCategories = [
+  {
+    key: 'frontend',
+    items: ['React (Inertia.js)', 'JavaScript ES6+', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3'],
+  },
+  {
+    key: 'backend',
+    items: ['PHP', 'Laravel 13/12/11', 'APIs RESTful', 'Node.js'],
+  },
+  {
+    key: 'database',
+    items: ['MySQL', 'Schema Design', 'SQL Queries'],
+  },
+  {
+    key: 'tools',
+    items: ['Git', 'GitHub', 'Composer', 'VS Code', 'XAMPP', 'Laragon'],
+  },
+  {
+    key: 'soft',
+    items: ['Teamwork', 'Effective communication', 'Problem solving', 'Adaptability'],
+  },
+];
 ---
 
 <section id="about" class="section">
@@ -16,22 +37,31 @@ const stack = ['React', 'Astro', 'TypeScript', 'Tailwind', 'Node.js'];
       </h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-12 md:gap-20">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
       <div class="reveal">
-        <p class="text-[var(--muted)] text-lg leading-relaxed mb-8">
+        <p class="text-[var(--muted)] text-lg leading-relaxed">
           {t.about.text}
         </p>
       </div>
 
       <div class="reveal">
         <h3 class="mono text-sm text-[var(--muted)] uppercase tracking-wider mb-6">
-          {t.about.stack}
+          {t.skills.title}
         </h3>
-        <div class="flex flex-wrap gap-3">
-          {stack.map((tech) => (
-            <span class="px-4 py-2 border border-[var(--border)] rounded-full text-sm text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--fg)] transition-colors">
-              {tech}
-            </span>
+        <div class="space-y-6">
+          {skillCategories.map((cat) => (
+            <div>
+              <h4 class="text-xs font-semibold uppercase tracking-wider text-[var(--fg)] mb-3">
+                {t.skills[cat.key as keyof typeof t.skills]}
+              </h4>
+              <div class="flex flex-wrap gap-2">
+                {cat.items.map((skill) => (
+                  <span class="px-3 py-1.5 border border-[var(--border)] rounded-full text-sm text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--fg)] transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

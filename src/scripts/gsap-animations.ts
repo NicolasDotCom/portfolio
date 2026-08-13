@@ -4,6 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export function initAnimations(): void {
+  ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
   // Section reveals
   const sections = document.querySelectorAll('.reveal');
   sections.forEach((section) => {
@@ -29,6 +31,9 @@ export function initAnimations(): void {
   const magneticBtns = document.querySelectorAll('.magnetic-btn');
   magneticBtns.forEach((btn) => {
     const el = btn as HTMLElement;
+    if (el.dataset.magneticBound) return;
+    el.dataset.magneticBound = 'true';
+
     el.addEventListener('mousemove', (e) => {
       const rect = el.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;

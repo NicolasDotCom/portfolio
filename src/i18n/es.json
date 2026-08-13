@@ -1,42 +1,100 @@
 {
   "site": {
-    "title": "Nicolás — Fullstack Developer",
-    "description": "Fullstack Developer creando experiencias web únicas."
+    "title": "Nicolas Sanchez Trujillo — Full-Stack Developer",
+    "description": "Full-Stack Developer especializado en Laravel, Inertia.js y React. Construyo aplicaciones web modernas con código limpio y escalable."
   },
   "nav": {
     "home": "Inicio",
     "about": "Sobre mí",
+    "experience": "Experiencia",
     "projects": "Proyectos",
     "contact": "Contacto"
   },
   "hero": {
     "greeting": "Hola, soy",
-    "name": "[Tu Nombre]",
-    "title": "Fullstack Developer",
-    "description": "Creando experiencias web únicas con código limpio y diseño minimalista.",
+    "name": "Nicolas Sanchez Trujillo",
+    "title": "Full-Stack Developer",
+    "description": "Construyo aplicaciones web modernas con Laravel, Inertia.js y React. Apasionado por el código limpio y escalable.",
     "cta": "Ver proyectos",
     "scroll": "Desplázate para explorar"
   },
   "about": {
     "title": "Sobre mí",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Apasionado por crear interfaces minimalistas con código limpio. Disfruto transformando ideas en productos digitales que la gente ama usar.",
-    "stack": "Stack técnico"
+    "text": "Desarrollador Full-Stack especializado en la creación de aplicaciones web modernas con Laravel, Inertia.js y React. Sólida experiencia en el ecosistema PHP, bases de datos MySQL y diseño de interfaces responsive con Tailwind CSS. Ingeniero en Desarrollo de Software, apasionado por construir productos digitales de alto rendimiento con código limpio y escalable."
+  },
+  "skills": {
+    "title": "Stack técnico",
+    "frontend": "Front-End",
+    "backend": "Back-End",
+    "database": "Bases de datos",
+    "tools": "Herramientas",
+    "soft": "Habilidades blandas"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "present": "Actualidad",
+    "items": [
+      {
+        "role": "Desarrollador Full-Stack",
+        "company": "Proyectos Autónomos",
+        "period": "2023 — Actualidad",
+        "description": "Lideré el desarrollo de dos aplicaciones web clave: un sistema de gestión de tickets de soporte (Laravel 12) y una plataforma de control de inventarios (Laravel 11). Implementé autenticación con roles y permisos, diseñé bases de datos MySQL optimizadas, y construí un front-end SPA moderno con React, Tailwind CSS e Inertia.js, además de APIs RESTful."
+      },
+      {
+        "role": "Desarrollador de Software",
+        "company": "Tes LTDA",
+        "period": "2022 — Actualidad",
+        "description": "Construyo aplicaciones que apoyan la operación diaria y mejoran la rapidez en la atención de servicios. Integro funciones para un control más claro de equipos y recursos, y realizo mejoras continuas para aumentar la eficiencia del trabajo interno."
+      },
+      {
+        "role": "Técnico de Sistemas",
+        "company": "GIT SAS",
+        "period": "2022 — 2022",
+        "description": "Proporcioné soporte técnico integral, resolviendo incidencias de hardware y software. Realicé diagnósticos de equipos, cambios de componentes, instalación de software y mantenimiento general."
+      }
+    ]
   },
   "projects": {
-    "title": "Proyectos",
+    "title": "Proyectos destacados",
     "viewProject": "Ver proyecto",
-    "viewCode": "Ver código"
+    "viewCode": "Ver código",
+    "items": [
+      {
+        "title": "Sistema de Tickets de Soporte",
+        "description": "Sistema completo de gestión de tickets con autenticación por roles (admin, técnicos, usuarios), seguimiento de estados y panel de control.",
+        "tags": ["Laravel 12", "Inertia.js", "React", "MySQL"]
+      },
+      {
+        "title": "Plataforma de Control de Inventarios",
+        "description": "Plataforma para gestión de inventarios con base de datos relacional optimizada, consultas SQL eficientes e interfaz moderna SPA.",
+        "tags": ["Laravel 11", "React", "Tailwind CSS", "MySQL"]
+      },
+      {
+        "title": "Sistema de Gestión Tes LTDA",
+        "description": "Aplicación interna para apoyar la operación diaria, mejorando la rapidez en atención de servicios y el control de equipos y recursos.",
+        "tags": ["Laravel", "PHP", "MySQL", "Tailwind CSS"]
+      },
+      {
+        "title": "Portfolio Personal",
+        "description": "Portfolio minimalista con animaciones WebGL, smooth scroll y view transitions, desplegado en GitHub Pages.",
+        "tags": ["Astro", "GSAP", "OGL", "Tailwind CSS"]
+      }
+    ]
   },
   "contact": {
     "title": "Contacto",
-    "description": "¿Tienes un proyecto en mente? Me encantaría escuchar tu idea.",
-    "email": "hello@nicolasdotcom.dev",
+    "description": "¿Tienes un proyecto en mente o quieres colaborar? Me encantaría escuchar tu idea.",
+    "emailLabel": "Email",
+    "phoneLabel": "Teléfono",
+    "locationLabel": "Ubicación",
+    "downloadCV": "Descargar CV",
     "form": {
       "name": "Nombre",
       "email": "Email",
       "message": "Mensaje",
       "send": "Enviar mensaje"
-    }
+    },
+    "socials": "Redes"
   },
   "footer": {
     "madeWith": "Hecho con",

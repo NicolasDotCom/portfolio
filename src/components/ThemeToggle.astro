@@ -1,5 +1,4 @@
 ---
-import { toggleTheme } from '../scripts/theme';
 ---
 
 <button
@@ -40,6 +39,14 @@ import { toggleTheme } from '../scripts/theme';
 <script>
   import { toggleTheme } from '../scripts/theme';
 
-  const toggle = document.getElementById('theme-toggle');
-  toggle?.addEventListener('click', toggleTheme);
+  const setupToggle = () => {
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle && !toggle.dataset.bound) {
+      toggle.addEventListener('click', toggleTheme);
+      toggle.dataset.bound = 'true';
+    }
+  };
+
+  setupToggle();
+  document.addEventListener('astro:page-load', setupToggle);
 </script>

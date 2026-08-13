@@ -1,42 +1,100 @@
 {
   "site": {
-    "title": "Nicolás — Fullstack Developer",
-    "description": "Fullstack Developer crafting unique web experiences."
+    "title": "Nicolas Sanchez Trujillo — Full-Stack Developer",
+    "description": "Full-Stack Developer specialized in Laravel, Inertia.js and React. I build modern web apps with clean, scalable code."
   },
   "nav": {
     "home": "Home",
     "about": "About",
+    "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact"
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "name": "[Your Name]",
-    "title": "Fullstack Developer",
-    "description": "Crafting unique web experiences with clean code and minimalist design.",
+    "name": "Nicolas Sanchez Trujillo",
+    "title": "Full-Stack Developer",
+    "description": "I build modern web applications with Laravel, Inertia.js and React. Passionate about clean, scalable code.",
     "cta": "View projects",
     "scroll": "Scroll to explore"
   },
   "about": {
     "title": "About me",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Passionate about creating minimalist interfaces with clean code. I enjoy turning ideas into digital products people love to use.",
-    "stack": "Tech stack"
+    "text": "Full-Stack Developer specialized in building modern web applications with Laravel, Inertia.js and React. Solid experience in the PHP ecosystem, MySQL databases and responsive interface design with Tailwind CSS. Software Engineer passionate about building high-performance digital products with clean, scalable code."
+  },
+  "skills": {
+    "title": "Tech stack",
+    "frontend": "Front-End",
+    "backend": "Back-End",
+    "database": "Databases",
+    "tools": "Tools",
+    "soft": "Soft skills"
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present",
+    "items": [
+      {
+        "role": "Full-Stack Developer",
+        "company": "Freelance Projects",
+        "period": "2023 — Present",
+        "description": "Led the development of two key web applications: a support ticket management system (Laravel 12) and an inventory control platform (Laravel 11). Implemented role-based authentication, designed optimized MySQL databases, and built a modern SPA front-end with React, Tailwind CSS and Inertia.js, plus RESTful APIs."
+      },
+      {
+        "role": "Software Developer",
+        "company": "Tes LTDA",
+        "period": "2022 — Present",
+        "description": "Building applications that support daily operations and improve service response times. Integrating features for clearer control of equipment and resources, and making continuous improvements to boost internal work efficiency."
+      },
+      {
+        "role": "Systems Technician",
+        "company": "GIT SAS",
+        "period": "2022 — 2022",
+        "description": "Provided comprehensive technical support, resolving hardware and software incidents. Performed equipment diagnostics, component replacements, software installation and general maintenance."
+      }
+    ]
   },
   "projects": {
-    "title": "Projects",
+    "title": "Featured projects",
     "viewProject": "View project",
-    "viewCode": "View code"
+    "viewCode": "View code",
+    "items": [
+      {
+        "title": "Support Ticket System",
+        "description": "Complete ticket management system with role-based authentication (admin, technicians, end users), status tracking and dashboard.",
+        "tags": ["Laravel 12", "Inertia.js", "React", "MySQL"]
+      },
+      {
+        "title": "Inventory Control Platform",
+        "description": "Inventory management platform with optimized relational database, efficient SQL queries and modern SPA interface.",
+        "tags": ["Laravel 11", "React", "Tailwind CSS", "MySQL"]
+      },
+      {
+        "title": "Tes LTDA Management System",
+        "description": "Internal application to support daily operations, improving service response times and control of equipment and resources.",
+        "tags": ["Laravel", "PHP", "MySQL", "Tailwind CSS"]
+      },
+      {
+        "title": "Personal Portfolio",
+        "description": "Minimalist portfolio with WebGL animations, smooth scroll and view transitions, deployed on GitHub Pages.",
+        "tags": ["Astro", "GSAP", "OGL", "Tailwind CSS"]
+      }
+    ]
   },
   "contact": {
     "title": "Contact",
-    "description": "Have a project in mind? I'd love to hear your idea.",
-    "email": "hello@nicolasdotcom.dev",
+    "description": "Have a project in mind or want to collaborate? I'd love to hear your idea.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "locationLabel": "Location",
+    "downloadCV": "Download CV",
     "form": {
       "name": "Name",
       "email": "Email",
       "message": "Message",
       "send": "Send message"
-    }
+    },
+    "socials": "Socials"
   },
   "footer": {
     "madeWith": "Made with",

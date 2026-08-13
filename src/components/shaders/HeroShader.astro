@@ -133,10 +133,11 @@
     let mouseX = 0.5;
     let mouseY = 0.5;
 
-    document.addEventListener('mousemove', (e) => {
+    function onMouseMove(e: MouseEvent) {
       mouseX = e.clientX / window.innerWidth;
       mouseY = 1.0 - e.clientY / window.innerHeight;
-    });
+    }
+    document.addEventListener('mousemove', onMouseMove);
 
     // Theme observer
     const observer = new MutationObserver(() => {
@@ -170,6 +171,7 @@
       cancelAnimationFrame(animationId);
       observer.disconnect();
       window.removeEventListener('resize', onResize);
+      document.removeEventListener('mousemove', onMouseMove);
     }, { once: true });
   }
 

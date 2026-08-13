@@ -5,56 +5,25 @@ import ProjectCard from './ProjectCard.astro';
 const locale = getLocaleFromUrl(Astro.url);
 const t = getTranslations(locale);
 
-const projects = [
-  {
-    title: 'E-commerce App',
-    description: 'Full-stack e-commerce platform with cart, payments, and admin dashboard.',
-    tags: ['React', 'Node.js', 'PostgreSQL'],
-    image: 'https://picsum.photos/seed/ecommerce/800/600',
-    link: '#',
-    code: '#',
-  },
-  {
-    title: 'Task Manager',
-    description: 'Collaborative task management with real-time updates and team workspaces.',
-    tags: ['Vue', 'Supabase', 'TypeScript'],
-    image: 'https://picsum.photos/seed/taskmanager/800/600',
-    link: '#',
-    code: '#',
-  },
-  {
-    title: 'Weather Dashboard',
-    description: 'Beautiful weather app with forecasts, maps, and location-based alerts.',
-    tags: ['Next.js', 'OpenWeather', 'Tailwind'],
-    image: 'https://picsum.photos/seed/weather/800/600',
-    link: '#',
-    code: '#',
-  },
-  {
-    title: 'Portfolio v1',
-    description: 'First personal portfolio built with vanilla web technologies.',
-    tags: ['HTML', 'CSS', 'JavaScript'],
-    image: 'https://picsum.photos/seed/portfolio/800/600',
-    link: '#',
-    code: '#',
-  },
-  {
-    title: 'REST API Boilerplate',
-    description: 'Production-ready REST API with auth, validation, and documentation.',
-    tags: ['Express', 'MongoDB', 'JWT'],
-    image: 'https://picsum.photos/seed/api/800/600',
-    link: '#',
-    code: '#',
-  },
-  {
-    title: 'Real-time Chat',
-    description: 'WebSocket-based chat app with rooms, private messages, and file sharing.',
-    tags: ['Socket.io', 'React', 'Redis'],
-    image: 'https://picsum.photos/seed/chat/800/600',
-    link: '#',
-    code: '#',
-  },
-];
+const projectImages: Record<string, string> = {
+  'Sistema de Tickets de Soporte': 'https://picsum.photos/seed/tickets/800/600',
+  'Support Ticket System': 'https://picsum.photos/seed/tickets/800/600',
+  'Plataforma de Control de Inventarios': 'https://picsum.photos/seed/inventory/800/600',
+  'Inventory Control Platform': 'https://picsum.photos/seed/inventory/800/600',
+  'Sistema de Gestión Tes LTDA': 'https://picsum.photos/seed/tes/800/600',
+  'Tes LTDA Management System': 'https://picsum.photos/seed/tes/800/600',
+  'Portfolio Personal': 'https://picsum.photos/seed/portfolio/800/600',
+  'Personal Portfolio': 'https://picsum.photos/seed/portfolio/800/600',
+};
+
+const projects = t.projects.items.map((project) => ({
+  title: project.title,
+  description: project.description,
+  tags: project.tags,
+  image: projectImages[project.title] || 'https://picsum.photos/seed/project/800/600',
+  link: '#',
+  code: '#',
+}));
 ---
 
 <section id="projects" class="section">
@@ -66,7 +35,7 @@ const projects = [
       </h2>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
       {projects.map((project) => (
         <ProjectCard {...project} />
       ))}
